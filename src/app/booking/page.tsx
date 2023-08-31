@@ -2,6 +2,6 @@
 
 export default () => {
     return (
-        <div>Booking Page</div>
+        <div className={"mt-16"}>Booking Page</div>
     )
 }
