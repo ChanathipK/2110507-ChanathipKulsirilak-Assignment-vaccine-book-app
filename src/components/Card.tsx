@@ -2,13 +2,13 @@ import Image from 'next/image';
 
 let cardClass: string = ""
 
-let cardClassArray: string[] = ["mt-16", "mb-12", "mx-6", "shadow-[0_0_12px_6px_rgba(0,0,0,0.1)]", "px-5", "py-5", "rounded-lg", "text-justify", "h-[400px]", "w-1/4", "max-w-[300px]", "flex", "flex-col", "items-center", "min-w-[250px]", "flex-wrap"];
+let cardClassArray: string[] = ["px-0", "py-0", "rounded-lg", "text-justify", "h-[440px]", "w-[20%]", "max-w-[300px]", "flex", "flex-col", "items-center", "min-w-[250px]", "flex-wrap"];
 for (let i = 0; i < cardClassArray.length; i++) {
     cardClass += " " + cardClassArray[i];
 }
 
 let imageDivClass: string = "";
-let imageDivClassArray: string[] = ["w-full", "h-4/5", "bg-amber-600", "relative"];
+let imageDivClassArray: string[] = ["w-full", "h-[75%]", "bg-amber-600", "relative", "rounded-t-lg"];
 for (let i = 0; i < imageDivClassArray.length; i++) {
     imageDivClass += " " + imageDivClassArray[i];
 }
@@ -28,7 +28,7 @@ export default ({hospitalName, imgSrc}: {hospitalName: string, imgSrc: string}) 
                     alt={hospitalName + "'s image"}
                     fill={true}
                     objectFit='cover'
-                    className={"rounded-md"}
+                    className={"rounded-lg"}
                 />
             </div>
             <h1 className={infoHeadingClass}>{hospitalName}</h1>
