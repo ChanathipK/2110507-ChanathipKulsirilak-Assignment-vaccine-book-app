@@ -14,7 +14,7 @@ for (let i = 0; i < logoClassArray.length; i++) {
 }
 
 let menuItemBookingClass: string = "";
-let menuItemBookingClassArray: string[] = ["relative", "flex", "justify-center", "items-center", "me-3", ""];
+let menuItemBookingClassArray: string[] = ["relative", "flex", "justify-center", "items-center", "me-3"];
 for (let i = 0; i < menuItemBookingClassArray.length; i++) {
     menuItemBookingClass += " " + menuItemBookingClassArray[i];
 }
