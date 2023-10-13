@@ -16,25 +16,40 @@ export default () => {
             newState.delete(action.hospitalName);
             return newState;
         }
-
         return new Map<string, number>();
     }
 
     const [ratingMap, dispatchRating] = useReducer(ratingReducer, new Map<string, number>());
 
-    console.log(ratingMap);
+    type Hospital = {
+        id: string,
+        name: string,
+        imgSrc: string
+    }
+
+    let hospitalArray: Hospital[] = [
+        {id: "001", name: "Chulalongkorn Hospital", imgSrc: "/images/chula.jpg"},
+        {id: "002", name: "Rajavithi Hospital", imgSrc: "/images/rajavithi.jpg"},
+        {id: "003", name: "Thammasat Hospital", imgSrc: "/images/thammasat.jpg"}
+    ];
+
+    let hospitalCard = hospitalArray.map((hospital) => {
+        return (
+            <CardFrame>
+                <Card
+                hospitalName={hospital.name} 
+                imgSrc={hospital.imgSrc}
+                onRating={(hospitalName: string, rating: number) => dispatchRating({type: "add", hospitalName: hospitalName, rating: rating})}
+                id={hospital.id}
+                />
+            </CardFrame>
+        )
+    })
+    
     return (
         <div>
             <div className="w-full flex justify-center mt-10">
-                <CardFrame>
-                <Card hospitalName='Chulalongkorn Hospital' imgSrc='/images/chula.jpg' onRating={(hospitalName: string, rating: number) => dispatchRating({type: "add", hospitalName: hospitalName, rating: rating})} />
-                </CardFrame>
-                <CardFrame>
-                <Card hospitalName='Rajavithi Hospital' imgSrc='/images/rajavithi.jpg' onRating={(hospitalName: string, rating: number) => dispatchRating({type: "add", hospitalName: hospitalName, rating: rating})} />
-                </CardFrame>
-                <CardFrame>
-                <Card hospitalName='Thammasat Hospital' imgSrc='/images/thammasat.jpg' onRating={(hospitalName: string, rating: number) => dispatchRating({type: "add", hospitalName: hospitalName, rating: rating})} />
-                </CardFrame>
+                {hospitalCard}
             </div>
             <div className="ml-12 mt-12 mb-8">
                 <h2 className="text-xl">Hospital Rating</h2>
