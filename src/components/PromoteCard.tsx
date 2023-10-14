@@ -2,10 +2,15 @@
 
 import { useState } from 'react';
 import VideoPlayer from './VideoPlayer';
+import { useWindowListener } from '@/hooks/useWindowListener';
 
 export default function PromoteCard() {
 
     const [playing, setPlaying] = useState(true);
+
+    useWindowListener("contextmenu", (e)=>{
+        e.preventDefault();
+    })
 
     return (
         <div className="flex flex-row justify-center my-14">
