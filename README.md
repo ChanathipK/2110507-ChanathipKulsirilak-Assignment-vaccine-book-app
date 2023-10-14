@@ -43,6 +43,6 @@
 ### Images
 
 1. An image by [Diana Polekhina](https://unsplash.com/@diana_pole) from [Unsplash](https://unsplash.com)
-![An image](public/images/diana-polekhina-ZBstHWt9vLc-unsplash.jpg)
+![An image](public/images/vaccine_a.jpg)
 
 2. รูปภาพที่ถูกเตรียมไว้สำหรับ Assignment
