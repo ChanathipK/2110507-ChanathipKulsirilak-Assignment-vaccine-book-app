@@ -14,7 +14,7 @@
 
 .bannerHeading {
     font-size: 5rem;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 1);
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     font-weight: lighter;
     position: absolute;
@@ -24,6 +24,7 @@
     transform: translateY(-50%);
     text-align: start;
     z-index: 2;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
 
 }
 

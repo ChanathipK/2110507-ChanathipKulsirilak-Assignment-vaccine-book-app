@@ -1,57 +1,53 @@
-import Image from "next/image";
 import Link from "next/link";
-
-let menuBarClass: string = "";
-let menuBarClassArray: string[] = ["w-full", "m-0", "h-14", "fixed", "top-0", "left-0", "right-0", "flex", "flex-row-reverse", "z-50", "bg-slate-950", "text-slate-50"];
-for (let i = 0; i < menuBarClassArray.length; i++) {
-    menuBarClass += " " + menuBarClassArray[i];
-}
-
-let logoClass: string = "";
-let logoClassArray: string[] = ["relative", "flex", "justify-center", "items-center", "me-2", "h-full", "ms-3"];
-for (let i = 0; i < logoClassArray.length; i++) {
-    logoClass += " " + logoClassArray[i];
-}
-
-let menuItemBookingClass: string = "";
-let menuItemBookingClassArray: string[] = ["relative", "flex", "justify-center", "items-center", "me-3"];
-for (let i = 0; i < menuItemBookingClassArray.length; i++) {
-    menuItemBookingClass += " " + menuItemBookingClassArray[i];
-}
-
-let linkLogoClass: string = "";
-let linkLogoClassArray: string[] = ["rounded-md", "border-2", "border-solid", "border-slate-50", "py-2", "px-2"];
-for (let i = 0; i < linkLogoClassArray.length; i++) {
-    linkLogoClass += " " + linkLogoClassArray[i];
-}
-
-let linkBookingClass: string = "";
-let linkBookingClassArray: string[] = [];
-for (let i = 0; i < linkBookingClassArray.length; i++) {
-    linkBookingClass += " " + linkBookingClass[i];
-}
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { getServerSession } from "next-auth";
 
 
+export default async function MainMenuBar() {
 
-export default () => {
+    const session = await getServerSession(authOptions);
+
     return (
-        <div className={menuBarClass}>
-            <div className={logoClass}>
-                <Link
-                 href={"/"}
-                 replace={false}
-                 scroll={true}
-                 prefetch={true}
-                 className={linkLogoClass}
-                >Vaccing Booking App</Link>
-            </div>
-            <div className={menuItemBookingClass}>
-                <Link
-                    href={"/booking"}
+        <div className="w-full m-0 h-14 fixed top-0 left-0 flex flex-row-reverse z-50 bg-slate-950 text-slate-50 justify-between">
+            <div className="flex flex-row-reverse">
+                <div className="relative flex justify-center items-center me-2 h-full ms-3">
+                    <Link
+                    href={"/"}
                     replace={false}
                     scroll={true}
                     prefetch={true}
-                >Booking</Link>
+                    className="rounded-md border-2 border-solid border-slate-50 py-2 px-2"
+                    >Vaccing Booking App</Link>
+                </div>
+                <div className="relative flex justify-center items-center me-3">
+                    <Link
+                        href={"/booking"}
+                        replace={false}
+                        scroll={true}
+                        prefetch={true}
+                    >Booking</Link>
+                </div>
+            </div>
+            <div className="relative flex justify-center items-center h-full ms-4">
+                {
+                    session?
+                        <Link
+                        href={"/api/auth/signout"}
+                        replace={false}
+                        scroll={true}
+                        prefetch={true}
+                        >
+                            Sign out of {session.user?.name}
+                        </Link>
+                    : <Link
+                        href={"api/auth/signin"}
+                        replace={false}
+                        scroll={true}
+                        prefetch={true}
+                        >
+                            Sign in
+                        </Link>
+                }      
             </div>
         </div>
     )
