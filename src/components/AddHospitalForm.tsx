@@ -15,7 +15,6 @@ export default function AddHospitalForm() {
 
     const formRef = useRef<HTMLFormElement>(null);
 
-
     return (
         <div className="w-full h-[110vh] flex justify-center items-center">
             <div className="w-1/2 h-[90vh] rounded-lg bg-slate-500">
