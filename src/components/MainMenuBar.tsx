@@ -8,7 +8,7 @@ export default async function MainMenuBar() {
     const session = await getServerSession(authOptions);
 
     return (
-        <div className="w-full m-0 h-14 fixed top-0 left-0 flex flex-row-reverse z-50 bg-slate-950 text-slate-50 justify-between">
+        <div className="w-full m-0 h-14 fixed top-0 left-0 flex flex-row-reverse z-50 bg-slate-800 text-slate-50 justify-between">
             <div className="flex flex-row-reverse">
                 <div className="relative flex justify-center items-center me-2 h-full ms-3">
                     <Link
@@ -47,7 +47,14 @@ export default async function MainMenuBar() {
                         >
                             Sign in
                         </Link>
-                }      
+                }
+                <div className="ms-6">
+                    <Link
+                        href="/mybooking"
+                    >
+                        My Booking
+                    </Link>
+                </div>
             </div>
         </div>
     )
