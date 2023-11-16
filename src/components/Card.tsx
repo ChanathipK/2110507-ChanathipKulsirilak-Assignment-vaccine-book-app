@@ -20,8 +20,7 @@ export default ({hospitalName, imgSrc, onRating, id}: {hospitalName: string, img
                     src={imgSrc}
                     alt={hospitalName + "'s image"}
                     fill={true}
-                    objectFit='cover'
-                    className="rounded-t-lg"
+                    className="rounded-t-lg object-cover"
                     />
                 </Link>
                 
