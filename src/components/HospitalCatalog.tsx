@@ -2,7 +2,7 @@ import Card from "./Card";
 import CardFrame from "./CardFrame";
 import { Hospitals } from "../../interfaces";
 
-export default async function HospitalCatalog({fetchedData}: {fetchedData: Promise<Hospitals>}) {
+export default async function HospitalCatalog({fetchedData}: {fetchedData: Promise<Hospitals> | Hospitals}) {
 
     const dataReady = await fetchedData;
 
