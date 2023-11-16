@@ -1,23 +1,6 @@
 import Card from "./Card";
 import CardFrame from "./CardFrame";
-
-type Hospitals = {
-    success: boolean,
-    count: number,
-    pagination: {},
-    data: {
-        _id: string,
-        name: string,
-        address: string,
-        district: string,
-        province: string,
-        postalcode: string,
-        tel: string,
-        picture: string,
-        __v: number,
-        id: string
-    }[]
-}
+import { Hospitals } from "../../interfaces";
 
 export default async function HospitalCatalog({fetchedData}: {fetchedData: Promise<Hospitals>}) {
 
