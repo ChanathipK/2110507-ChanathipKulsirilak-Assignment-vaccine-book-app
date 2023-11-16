@@ -8,7 +8,7 @@ export default async function HospitalCatalog({fetchedData}: {fetchedData: Promi
 
     let cardList = dataReady.data.map((hospital) => {
         return (
-            <CardFrame>
+            <CardFrame key={hospital.name}>
                 <Card hospitalName={hospital.name} imgSrc={hospital.picture} id={hospital.id} />
             </CardFrame>
         )
