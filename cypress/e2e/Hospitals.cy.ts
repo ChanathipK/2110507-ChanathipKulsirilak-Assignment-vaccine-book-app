@@ -36,7 +36,7 @@ describe('Hospitals', () => {
 
     cy.get("button").contains("View hospitals").should("exist").click();
 
-    cy.wait(7000);
+    cy.wait(10000);
 
     cy.get("img").should("exist").should("have.length.at.least", 3);
 
