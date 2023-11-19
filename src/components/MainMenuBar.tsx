@@ -27,6 +27,16 @@ export default async function MainMenuBar() {
                         prefetch={true}
                     >Booking</Link>
                 </div>
+                <div className="flex justify-center items-center me-8">
+                    <Link
+                    href={"/hospital"}
+                    replace={false}
+                    scroll={true}
+                    prefetch={true}
+                    >
+                        Hospitals
+                    </Link>
+                </div>
             </div>
             <div className="relative flex justify-center items-center h-full ms-4">
                 {
